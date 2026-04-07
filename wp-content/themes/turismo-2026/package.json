@@ -1,0 +1,12 @@
+{
+  "name": "turismo-2026",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./assets/css/input.css -o ./assets/css/app.css --watch",
+    "build": "npx tailwindcss -i ./assets/css/input.css -o ./assets/css/app.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17",
+    "@tailwindcss/typography": "^0.5.15"
+  }
+}

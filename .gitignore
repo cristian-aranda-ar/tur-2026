@@ -1,0 +1,6 @@
+# Uploads — no subir al repo
+wp-content/uploads/
+
+# Local env
+.env
+.env.local

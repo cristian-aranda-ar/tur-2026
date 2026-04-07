@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+
+  <!-- Grid lines -->
+  <g stroke="white" stroke-width="0.6" opacity="0.4">
+    <line x1="0" y1="83" x2="800" y2="83"/>
+    <line x1="0" y1="166" x2="800" y2="166"/>
+    <line x1="0" y1="249" x2="800" y2="249"/>
+    <line x1="0" y1="332" x2="800" y2="332"/>
+    <line x1="0" y1="415" x2="800" y2="415"/>
+    <line x1="100" y1="0" x2="100" y2="500"/>
+    <line x1="200" y1="0" x2="200" y2="500"/>
+    <line x1="300" y1="0" x2="300" y2="500"/>
+    <line x1="400" y1="0" x2="400" y2="500"/>
+    <line x1="500" y1="0" x2="500" y2="500"/>
+    <line x1="600" y1="0" x2="600" y2="500"/>
+    <line x1="700" y1="0" x2="700" y2="500"/>
+  </g>
+
+  <!-- Contour curves -->
+  <g stroke="white" stroke-width="1" fill="none" opacity="0.25">
+    <path d="M0 180 Q120 140 250 200 Q380 260 520 190 Q640 130 800 170"/>
+    <path d="M0 230 Q100 195 240 250 Q370 305 510 240 Q630 185 800 220"/>
+    <path d="M0 280 Q130 250 260 300 Q390 350 530 285 Q660 230 800 270"/>
+    <path d="M50 80 Q200 50 340 110 Q470 165 600 95 Q700 50 800 80"/>
+    <path d="M0 360 Q150 330 300 380 Q440 425 580 365 Q700 315 800 350"/>
+  </g>
+
+  <!-- Route lines -->
+  <g stroke="white" stroke-width="1.5" stroke-dasharray="6 4" fill="none" opacity="0.35">
+    <path d="M80 420 Q180 340 280 260 Q360 200 460 160 Q560 120 660 80"/>
+    <path d="M120 460 Q220 390 340 310 Q440 240 560 200 Q680 160 760 120"/>
+  </g>
+
+  <!-- Location pins -->
+  <g fill="white" opacity="0.55">
+    <!-- Pin 1 -->
+    <path d="M160 200 C160 190 150 182 138 182 C126 182 116 190 116 200 C116 213 138 232 138 232 C138 232 160 213 160 200Z"/>
+    <circle cx="138" cy="200" r="5" fill="#a1aba4"/>
+
+    <!-- Pin 2 -->
+    <path d="M410 140 C410 130 400 122 388 122 C376 122 366 130 366 140 C366 153 388 172 388 172 C388 172 410 153 410 140Z"/>
+    <circle cx="388" cy="140" r="5" fill="#a1aba4"/>
+
+    <!-- Pin 3 -->
+    <path d="M620 280 C620 270 610 262 598 262 C586 262 576 270 576 280 C576 293 598 312 598 312 C598 312 620 293 620 280Z"/>
+    <circle cx="598" cy="280" r="5" fill="#a1aba4"/>
+
+    <!-- Pin 4 -->
+    <path d="M720 380 C720 370 710 362 698 362 C686 362 676 370 676 380 C676 393 698 412 698 412 C698 412 720 393 720 380Z"/>
+    <circle cx="698" cy="380" r="5" fill="#a1aba4"/>
+  </g>
+
+  <!-- Compass rose -->
+  <g transform="translate(48,52)" opacity="0.4">
+    <circle cx="0" cy="0" r="20" stroke="white" stroke-width="0.8" fill="none"/>
+    <polygon points="0,-18 3,-6 -3,-6" fill="white"/>
+    <polygon points="0,18 3,6 -3,6" fill="white" opacity="0.5"/>
+    <polygon points="-18,0 -6,3 -6,-3" fill="white" opacity="0.5"/>
+    <polygon points="18,0 6,3 6,-3" fill="white" opacity="0.5"/>
+    <text x="-3" y="-22" font-size="8" fill="white" font-family="sans-serif">N</text>
+  </g>
+
+  <!-- Scale bar -->
+  <g transform="translate(680,460)" opacity="0.35">
+    <line x1="0" y1="0" x2="80" y2="0" stroke="white" stroke-width="1.5"/>
+    <line x1="0" y1="-5" x2="0" y2="5" stroke="white" stroke-width="1.5"/>
+    <line x1="80" y1="-5" x2="80" y2="5" stroke="white" stroke-width="1.5"/>
+    <line x1="40" y1="-3" x2="40" y2="3" stroke="white" stroke-width="1"/>
+  </g>
+
+</svg>

@@ -1,0 +1,351 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Gutenberg: restaurar estilos base dentro del editor y bloques ─── */
+.wp-block,
+.wp-block-group,
+.entry-content,
+.wp-block-post-content {
+  @apply max-w-none;
+}
+
+/* Neutralizar Preflight en contenido del editor */
+.entry-content h1,
+.entry-content h2,
+.entry-content h3,
+.entry-content h4,
+.entry-content h5,
+.entry-content h6 {
+  @apply font-bold;
+}
+
+.entry-content p {
+  @apply my-4;
+}
+
+.entry-content ul {
+  @apply list-disc pl-6 my-4;
+}
+
+.entry-content ol {
+  @apply list-decimal pl-6 my-4;
+}
+
+.entry-content a {
+  @apply text-primary underline;
+}
+
+/* ─── Header ─── */
+@layer components {
+  #site-header {
+    @apply absolute top-0 left-0 right-0 z-50;
+  }
+
+  /* Admin bar: 46px mobile, 32px desktop */
+  body.admin-bar #site-header,
+  body.admin-bar #site-header.scrolled {
+    top: 46px;
+  }
+
+  @media screen and (min-width: 783px) {
+    body.admin-bar #site-header,
+    body.admin-bar #site-header.scrolled {
+      top: 32px;
+    }
+  }
+
+  body.admin-bar #mobile-menu,
+  body.admin-bar #search-panel {
+    top: 46px;
+  }
+
+  @media screen and (min-width: 783px) {
+    body.admin-bar #mobile-menu,
+    body.admin-bar #search-panel {
+      top: 32px;
+    }
+  }
+
+  #site-header .header-inner {
+    @apply flex items-center justify-between px-4 py-4 md:py-5;
+  }
+
+  /* Logo */
+  #site-header .site-logo img {
+    @apply h-10 md:h-12 w-auto;
+  }
+
+  /* ── Nav desktop ── */
+  #primary-nav > ul {
+    @apply hidden md:flex items-center gap-8;
+  }
+
+  /* Item de primer nivel */
+  #primary-nav > ul > li {
+    @apply relative;
+  }
+
+  #primary-nav > ul > li > a {
+    @apply text-white font-medium text-sm uppercase tracking-wide
+           hover:text-primary transition-colors duration-200 py-2 block;
+  }
+
+  /* Flecha indicadora de submenu */
+  #primary-nav > ul > li.menu-item-has-children > a::after {
+    content: '▾';
+    @apply ml-1 text-xs;
+  }
+
+  #primary-nav .sub-menu li a {
+    @apply text-white/80 text-sm font-normal normal-case tracking-normal
+           px-4 py-2 block hover:text-primary hover:bg-white/5
+           transition-colors duration-150;
+  }
+
+  /* ── Mobile menu overlay ── */
+  .header-icon-btn {
+    @apply flex items-center justify-center w-10 h-10 text-white
+           rounded-full transition-colors duration-200
+           hover:bg-white/10 focus:outline-none;
+  }
+
+  /* Mobile menu: slide desde la izquierda, 80% ancho */
+  #mobile-menu {
+    @apply fixed top-0 left-0 bottom-0 z-40 bg-tertiary/95 backdrop-blur-sm
+           flex flex-col pt-20 overflow-y-auto
+           -translate-x-full transition-transform duration-300 ease-in-out;
+    width: 80%;
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+  }
+
+  #mobile-menu.is-open {
+    @apply translate-x-0;
+  }
+
+  /* Overlay oscuro detrás del menu */
+  #mobile-menu-overlay {
+    @apply fixed inset-0 z-30 bg-black/50 backdrop-blur-sm
+           opacity-0 invisible transition-all duration-300;
+  }
+
+  #mobile-menu-overlay.is-open {
+    @apply opacity-100 visible;
+  }
+
+  /* Icono hamburger -> X */
+  #menu-toggle .icon-open  { @apply block; }
+  #menu-toggle .icon-close { @apply hidden; }
+  #menu-toggle.is-open .icon-open  { @apply hidden; }
+  #menu-toggle.is-open .icon-close { @apply block; }
+
+  /* Primer nivel mobile */
+  #mobile-menu > ul {
+    @apply flex flex-col gap-1 overflow-y-auto;
+  }
+
+  #mobile-menu > ul > li > a {
+    @apply text-white text-2xl font-bold
+           hover:text-primary transition-colors duration-200
+           py-3 block;
+  }
+
+  /* Submenu mobile: siempre visible, tamaño menor */
+  #mobile-menu .sub-menu {
+    @apply flex flex-col pl-4 border-l border-white/20 mb-3;
+  }
+
+  #mobile-menu .sub-menu li a {
+    @apply text-white/70 text-base font-normal
+           hover:text-primary transition-colors duration-200
+           py-1.5 block;
+  }
+
+  /* Header scrolled */
+  #site-header.scrolled {
+    @apply fixed bg-tertiary/95 backdrop-blur-sm shadow-lg;
+    animation: slideDown 0.3s ease;
+  }
+
+  @keyframes slideDown {
+    from { transform: translateY(-100%); }
+    to   { transform: translateY(0); }
+  }
+
+  /* Search panel: cubre el header completamente */
+  #search-panel {
+    @apply fixed inset-x-0 top-0 z-[60] bg-tertiary flex items-center gap-4
+           px-4 py-4 md:py-5
+           -translate-y-full transition-transform duration-300 ease-in-out;
+  }
+
+  body.admin-bar #search-panel {
+    top: 46px;
+  }
+
+  @media screen and (min-width: 783px) {
+    body.admin-bar #search-panel {
+      top: 32px;
+    }
+  }
+
+  #search-panel.is-open {
+    @apply translate-y-0;
+  }
+
+  #search-panel input[type="search"] {
+    @apply flex-1 bg-transparent border-b-2 border-primary text-white
+           placeholder-white/60 text-lg outline-none py-2;
+  }
+}
+
+/* ── Hero quick icons ── */
+@layer components {
+  .hero-quick-icon {
+    @apply flex items-center justify-center w-16 h-16 aspect-square shrink-0 rounded-full transition-opacity duration-200;
+    background-color: rgba(255,255,255,0.08);
+  }
+
+  .hero-quick-icon:hover {
+    opacity: 0.8;
+  }
+}
+
+/* ── Home cards ── */
+@layer components {
+  .home-card {
+    @apply relative flex flex-col overflow-hidden rounded-2xl shrink-0;
+    width: 78vw;
+    max-width: 320px;
+    height: 420px;
+    padding: 1.3rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  }
+
+  .home-card-arrow {
+    @apply flex items-center justify-center w-11 h-9 rounded-xl shrink-0;
+    background-color: #35C071;
+  }
+}
+
+/* ── Descubrí scroll cards ── */
+@layer components {
+  .descubri-card {
+    @apply relative flex flex-col overflow-hidden;
+    width: 78vw;
+    max-width: 560px;
+    height: 280px;
+    padding: 1.25rem;
+    border-radius: 1.3rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  }
+
+  .descubri-arrow {
+    @apply flex items-center justify-center ;
+    height: 2.25rem;
+    width: 2.75rem;
+    background-color: #35C071;
+    flex-shrink: 0;
+    border-radius: .75rem;
+  }
+
+  .descubri-dot {
+    display: block;
+    height: 8px;
+    border-radius: 9999px;
+    background-color: rgba(255,255,255,0.35);
+    width: 8px;
+    transition: width 0.3s ease, background-color 0.3s ease;
+  }
+
+  .descubri-dot--active {
+    background-color: rgba(255,255,255,0.9);
+    width: 24px;
+  }
+}
+
+/* Ocultar scrollbar */
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* ── Home body background ── */
+body.home {
+  background-color: #0C3423;
+  background-image: url('../images/bg-home.svg');
+  background-repeat: repeat-y;
+  background-size: 100% auto;
+  background-position: top center;
+}
+
+/* ── Footer ── */
+@layer components {
+  .footer-social-btn {
+    @apply flex items-center justify-center w-12 h-12 rounded-full
+           text-primary hover:opacity-75
+           transition-opacity duration-200;
+  }
+
+  .footer-contact-item {
+    @apply flex items-center gap-2 text-white transition-opacity duration-200;
+    font-size: 0.9em;
+  }
+
+  .footer-contact-item:hover {
+    opacity: 0.8;
+  }
+}
+
+/* ── Sub-menu: CSS puro (WordPress genera este HTML dinámicamente) ── */
+#primary-nav .sub-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 12rem;
+  background-color: rgba(12, 52, 35, 0.95);
+  backdrop-filter: blur(4px);
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  z-index: 50;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+#primary-nav > ul > li.is-open > .sub-menu {
+  display: flex;
+  flex-direction: column;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Sub-menu mobile: siempre visible */
+#mobile-menu .sub-menu {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1rem;
+  border-left: 1px solid rgba(255,255,255,0.2);
+  margin-bottom: 0.75rem;
+}
+
+#mobile-menu .sub-menu li a {
+  color: rgba(255,255,255,0.7);
+  font-size: 1rem;
+  font-weight: 400;
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
+  display: block;
+  transition: color 0.2s;
+}
+
+#mobile-menu .sub-menu li a:hover {
+  color: #35C071;
+}
