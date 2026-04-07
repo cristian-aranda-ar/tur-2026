@@ -3,11 +3,5 @@ builder = "DOCKERFILE"
 dockerfilePath = "Dockerfile"
 
 [deploy]
-healthcheckPath = "/wp-login.php"
-healthcheckTimeout = 300
 restartPolicyType = "ON_FAILURE"
-restartPolicyMaxRetries = 5
-
-[[services]]
-name = "tur-2026"
-internalPort = 80
+restartPolicyMaxRetries = 3
