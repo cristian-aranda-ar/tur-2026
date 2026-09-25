@@ -1,0 +1,124 @@
+.misiones2027-social-control .social-items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.misiones2027-social-control .social-item {
+    background: #fff;
+    border: 1px solid #dcdcde;
+    border-radius: 4px;
+    margin-bottom: 6px;
+    overflow: hidden;
+}
+
+.social-item__header {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 7px 8px 6px;
+    background: #f6f7f7;
+    border-bottom: 1px solid #dcdcde;
+}
+
+.social-item__icon {
+    flex-shrink: 0;
+    color: #3c434a;
+}
+
+.social-item__name {
+    flex: 1;
+    font-size: 12px;
+    font-weight: 600;
+    color: #1d2327;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.social-item__arrows {
+    display: flex;
+    gap: 2px;
+    flex-shrink: 0;
+}
+
+.social-move-up,
+.social-move-down {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    border: 1px solid #c3c4c7;
+    border-radius: 3px;
+    background: #fff;
+    cursor: pointer;
+    color: #3c434a;
+    font-size: 13px;
+    line-height: 1;
+    transition: background 0.1s, border-color 0.1s, color 0.1s;
+}
+
+.social-move-up:hover:not(:disabled),
+.social-move-down:hover:not(:disabled) {
+    background: #007cba;
+    border-color: #007cba;
+    color: #fff;
+}
+
+.social-move-up:disabled,
+.social-move-down:disabled {
+    opacity: 0.25;
+    cursor: default;
+}
+
+.social-item__body {
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.social-item__field {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.social-item__field-label {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #787c82;
+}
+
+.social-item__title-input,
+.social-item__url-input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px 7px;
+    font-size: 12px;
+    border: 1px solid #dcdcde;
+    border-radius: 3px;
+    background: #fff;
+    color: #1d2327;
+    transition: border-color 0.15s;
+}
+
+.social-item__title-input:focus,
+.social-item__url-input:focus {
+    border-color: #007cba;
+    outline: none;
+    box-shadow: 0 0 0 1px #007cba;
+}
+
+.social-item__url-input {
+    color: #0a6b99;
+}
+
+.social-item__url-input:placeholder-shown {
+    color: #a7aaad;
+}

@@ -1,0 +1,57 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "settings": {
+    "color": {
+      "custom": true,
+      "customDuotone": false,
+      "customGradient": false,
+      "defaultDuotone": false,
+      "defaultGradients": false,
+      "defaultPalette": false,
+      "palette": [
+        { "name": "Verde primario",   "slug": "primary",        "color": "#1a5c4c" },
+        { "name": "Verde oscuro",     "slug": "primary-dark",   "color": "#0e3a30" },
+        { "name": "Verde más oscuro", "slug": "primary-darker", "color": "#0c3423" },
+        { "name": "Acento naranja",   "slug": "accent",         "color": "#f5a623" },
+        { "name": "Blanco",           "slug": "white",          "color": "#ffffff" },
+        { "name": "Fondo claro",      "slug": "gray-light",     "color": "#f7f8f7" },
+        { "name": "Texto gris",       "slug": "gray-text",      "color": "#5a6360" },
+        { "name": "Texto oscuro",     "slug": "gray-dark",      "color": "#2a3230" },
+        { "name": "Gris suave",       "slug": "gray-muted",     "color": "#9ca3a0" },
+        { "name": "Borde gris",       "slug": "gray-border",    "color": "#dde1de" }
+      ]
+    },
+    "typography": {
+      "customFontSize": true,
+      "fontSizes": [
+        { "name": "Pequeño",   "slug": "sm",   "size": "13px" },
+        { "name": "Normal",    "slug": "base", "size": "15px" },
+        { "name": "Mediano",   "slug": "md",   "size": "18px" },
+        { "name": "Grande",    "slug": "lg",   "size": "24px" },
+        { "name": "Muy grande","slug": "xl",   "size": "32px" },
+        { "name": "Display",   "slug": "2xl",  "size": "52px" }
+      ]
+    },
+    "spacing": {
+      "customSpacingSize": true,
+      "units": ["px", "rem", "%"]
+    },
+    "layout": {
+      "contentSize": "800px",
+      "wideSize": "1200px"
+    },
+    "useRootPaddingAwareAlignments": false
+  },
+  "styles": {
+    "color": {
+      "background": "#f8faf9",
+      "text": "#2a3230"
+    },
+    "typography": {
+      "fontFamily": "'DM Sans', -apple-system, sans-serif",
+      "fontSize": "15px",
+      "lineHeight": "1.6"
+    }
+  }
+}
